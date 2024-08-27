@@ -66,4 +66,25 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Pages\StartScreen.xaml.cs">
+	    <DependentUpon>StartScreen.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\WeatherTabbedPage.xaml.cs">
+	    <DependentUpon>WeatherTabbedPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\WeekWeatherScreen.xaml.cs">
+	    <DependentUpon>WeekWeatherScreen.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\WeatherTabbedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\WeekWeatherScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

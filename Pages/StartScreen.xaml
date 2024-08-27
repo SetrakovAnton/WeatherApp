@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.Pages.StartScreen"
+             NavigationPage.HasNavigationBar="False"
+             Background="LightSkyBlue">
+
+    <VerticalStackLayout 
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+        <Label
+                Text="Текущее место"
+                TextColor="White"
+                FontSize="28"
+                HorizontalOptions="Center"/>
+
+        <Label
+                Text="Родной город"
+                TextColor="White"
+                FontSize="16"
+                HorizontalOptions="Center"/>
+
+        <Label
+                Text="Температура"
+                FontSize="28"
+                TextColor="White"
+                HorizontalOptions="Center"/>
+
+        <Label
+                Text="Какая-то облачность"
+                TextColor="White"
+                FontSize="20"
+                HorizontalOptions="Center"/>
+
+        <Border
+                Padding="12"
+                Margin="16,48,16,16"
+                StrokeShape="RoundRectangle 24,24,24,24"
+                BackgroundColor="#00A4E8">
+
+            <CollectionView
+                    x:Name="collectionViewDayWeather"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                            Orientation="Horizontal"
+                            ItemSpacing="16"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <VerticalStackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+
+                            <Label
+                                    Text="{Binding Time}"
+                                    TextColor="White"/>
+
+                            <Label
+                                    Text="{Binding Temperature}"
+                                    TextColor="White"/>
+
+                        </VerticalStackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>
